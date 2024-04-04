@@ -132,6 +132,8 @@ lsp.on_attach(function(client, bufnr)
     attach(opts)
 end)
 
+lsp.setup_servers({'dartls', force = true})
+
 lsp.setup()
 
 vim.diagnostic.config({
