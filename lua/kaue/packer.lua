@@ -59,4 +59,8 @@ return require('packer').startup(function(use)
           require("nvim-autopairs").setup {}
       end
   }
+
+  use('nvim-tree/nvim-web-devicons')
+
+  use('prichrd/netrw.nvim')
  end)
