@@ -49,4 +49,6 @@ return require('packer').startup(function(use)
   }
 
   use('vimlab/split-term.vim')
+
+  use('lewis6991/gitsigns.nvim')
  end)
