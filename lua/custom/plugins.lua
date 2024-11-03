@@ -1,4 +1,19 @@
 local plugins = {
+    {
+        "nvim-treesitter/nvim-treesitter",
+        opts = function()
+            opts = require "plugins.configs.treesitter"
+            opts.ensure_installed = {
+                "lua",
+                "go",
+                "rust",
+                "javascript",
+                "typescript",
+                "tsx",
+            }
+            return opts
+        end
+    },
     -- DAP
     {
         "rcarriga/nvim-dap-ui",
@@ -64,6 +79,13 @@ local plugins = {
     },
 
     -- LSP
+    -- {
+    --     "nvimtools/none-ls.nvim",
+    --     event = "VeryLazy",
+    --     opts = function()
+    --         return require "custom.configs.null-ls"
+    --     end
+    -- },
     {
         "jose-elias-alvarez/null-ls.nvim",
         event = "VeryLazy",
@@ -97,6 +119,10 @@ local plugins = {
                 "pyright",
 
                 "gopls",
+
+                "eslint-lsp",
+                "typescript-language-server",
+                "tailwindcss-language-server",
 
                 "zls",
             }
@@ -133,6 +159,19 @@ local plugins = {
             vim.cmd [[silent! GoInstallDeps]]
         end,
     },
+    -- React
+    {
+        "windwp/nvim-ts-autotag",
+        ft = {
+            "javascript",
+            "typescript",
+            "javascriptreact",
+            "typescriptreact",
+        },
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end
+    }
 }
 
 return plugins

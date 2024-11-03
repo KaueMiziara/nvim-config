@@ -4,7 +4,7 @@ local null_ls = require("null-ls")
 local opts = {
     sources = {
         null_ls.builtins.formatting.clang_format.with({
-            extra_args = { "--style=WebKit" },
+            extra_args = { "--style=Microsoft" },
             filetypes = { "c", "cpp", "h", "hpp" },
         }),
 
