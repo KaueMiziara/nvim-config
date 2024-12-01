@@ -36,6 +36,20 @@ lspconfig.gopls.setup {
     },
 }
 
+
+lspconfig.hls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "haskell-language-server-wrapper", "--lsp" },
+    filetypes = { "haskell", "lhaskell", "cabal" },
+    settings = {
+        haskell = {
+            cabalFormattingProvider = "cabalfmt",
+            formattingProvider = "ormolu"
+        },
+    },
+}
+
 lspconfig.ts_ls.setup({
     on_attach = on_attach,
     capabilities = capabilities,

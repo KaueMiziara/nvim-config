@@ -6,6 +6,7 @@ local plugins = {
             opts.ensure_installed = {
                 "lua",
                 "go",
+                "haskell",
                 "rust",
                 "javascript",
                 "typescript",
@@ -119,6 +120,8 @@ local plugins = {
                 "pyright",
 
                 "gopls",
+
+                "haskell-language-server",
 
                 "eslint-lsp",
                 "typescript-language-server",
