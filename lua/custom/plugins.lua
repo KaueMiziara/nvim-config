@@ -9,6 +9,7 @@ local plugins = {
                 "haskell",
                 "rust",
                 "javascript",
+                "php",
                 "typescript",
                 "tsx",
             }
@@ -127,6 +128,9 @@ local plugins = {
                 "typescript-language-server",
                 "tailwindcss-language-server",
 
+                "intelephense",
+                "phpactor",
+
                 "zls",
             }
         }
@@ -174,7 +178,22 @@ local plugins = {
         config = function()
             require("nvim-ts-autotag").setup()
         end
-    }
+    },
+    -- PHP
+    {
+        "adalessa/laravel.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+            "tpope/vim-dotenv",
+        },
+        opts = {
+            split_panel = true,
+            artisan_command_aliases = true,
+        },
+    },
+    {
+        "rcarriga/nvim-notify",
+    },
 }
 
 return plugins

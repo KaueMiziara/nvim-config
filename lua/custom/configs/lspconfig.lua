@@ -83,6 +83,25 @@ lspconfig.eslint.setup({
     },
 })
 
+lspconfig.intelephense.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "php" },
+    settings = {
+        intelephense = {
+            files = {
+                maxSize = 1000000,
+            },
+        },
+    },
+}
+
+lspconfig.phpactor.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "php" },
+}
+
 lspconfig.zls.setup {
     on_attach = on_attach,
     capabilities = capabilities,
